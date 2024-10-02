@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Estacionamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Controle de Estacionamento</h1>
+
+    <div class="tabs">
+        <button class="tablink" onclick="openTab(event, 'Reserva')">Reservar Vagas</button>
+        <button class="tablink" onclick="openTab(event, 'Cadastro')">Cadastro de Veículos</button>
+        <button class="tablink" onclick="openTab(event, 'Consulta')">Consultar Vagas</button>
+    </div>
+
+    <div id="Reserva" class="tabcontent">
+        <h2>Reserva de Vaga</h2>
+        <form id="reservaForm">
+            <label for="placaReserva">Placa do Veículo:</label>
+            <input type="text" id="placaReserva" required><br>
+
+            <label for="numeroApartamentoReserva">Número do Apartamento:</label>
+            <input type="number" id="numeroApartamentoReserva" required><br>
+
+            <label for="blocoApartamentoReserva">Bloco do Apartamento:</label>
+            <input type="number" id="blocoApartamentoReserva" required><br>
+
+            <label for="numeroVagaReserva">Número da Vaga:</label>
+            <input type="number" id="numeroVagaReserva"  min="1" max="100" required><br>
+
+            <button type="submit">Reservar Vaga</button>
+        </form>
+    </div>
+
+    <div id="Cadastro" class="tabcontent">
+        <h2>Cadastro de Veículos</h2>
+        <form id="cadastroForm">
+            <label for="placaCadastro">Placa do Veículo:</label>
+            <input type="text" id="placaCadastro" required><br>
+
+            <label for="nomeProprietario">Nome do Proprietário:</label>
+            <input type="text" id="nomeProprietario" required><br>
+
+            <label for="modeloVeiculo">Modelo do Veículo:</label>
+            <input type="text" id="modeloVeiculo" required><br>
+
+            <label for="corVeiculo">Cor do Veículo:</label>
+            <input type="text" id="corVeiculo" required><br>
+
+            <button type="submit">Cadastrar Veículo</button>
+        </form>
+    </div>
+
+    <div id="Consulta" class="tabcontent">
+        <h2>Consulta de Vagas</h2>
+        <button id="mostrarTodas">Mostrar Todas as Vagas</button>
+        <button id="mostrarDisponiveis">Mostrar Vagas Disponíveis</button>
+
+        <h2>Veículos Cadastrados</h2>
+        <ul id="listaVeiculos"></ul>
+
+        <h2>Vagas Reservadas</h2>
+        <ul id="listaReservas"></ul>
+
+        <p id="vagaStatus"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
